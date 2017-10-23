@@ -288,14 +288,14 @@ a.downLoad-btn{
     width:105px;
     height:24px;
     position:absolute;
-    right:40px;
-    bottom:50px;
+    left:30px;
+    bottom:23px;
 }
 a.downLoad-btn-big{
     width:149px;
     height:34px;
-    right:80px;
-    bottom:58px;
+    left:22px;
+    bottom:15px;
 }
 span.btn-line{
     position:absolute;
@@ -428,6 +428,8 @@ a.downLoad-btn:hover span.left-line{
 .container-ycImg a{
     position:absolute;
     /*border:1px solid #000;*/
+}
+.N5-checkMore-btn,.N5-innovate-link,.N5-court-link{
     height:25px;
 }
 .N5-checkMore-btn{
