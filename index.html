@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>赢创首页</title>
+    <link rel="stylesheet" href="css/index.css"/>
+    <script src="js/jquery-1.10.1.min.js"></script>
+</head>
+<body>
+<div class="header">
+    <div class="header-left clearFix">
+        <a href="javascript:"><img class="header-icon-yc" alt="赢创" src="img/headerIcon-yc.png" /></a>
+        <a href="javascript:"><img class="header-icon-ifeng" alt="ifeng.com" src="img/headerIcon-ifeng.png"/></a>
+    </div>
+    <div class="header-right">
+        <div class="sns-share">
+            <ul class="share">
+                <li><a class="shareWb" href="javascript:;" rel="sina"><img src="img/shareIcon-weibo.png" alt="微博" title="微博分享"/></a></li>
+                <li><a class="shareTd" href="javascript:;" rel="douban"><img src="img/shareIcon-tudou.png" alt="豆瓣" title="豆瓣分享"/></a></li>
+                <li><a class="shareQq" href="javascript:;" rel="qzone"><img src="img/shareIcon-qq.png" alt="qzone" title="qq空间分享"/></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    var j = jQuery.noConflict();
+    var snsName='';
+    var thelink='http://www.ifeng.com';
+    var thetitle='分享的内容。。。。';
+    var thePic='http://y1.ifengimg.com/f66684877c73e359/2014/0603/rdn_538db03211e1e.jpg';
+    var width=600;
+    var height=560;
+
+    j(function(){
+        j('.share a').click(function(){
+            snsName = j(this).attr('rel');
+            shareInner(snsName,thelink,thetitle,thePic,width,height);
+        })
+
+    })
+    function shareInner(snsName,thelink,thetitle,thePic,width,height){
+        var ds_tsina = 'http://v.t.sina.com.cn/share/share.php?url=' + encodeURI(thelink) + '&title=' + encodeURIComponent(thetitle) +'&pic=' + encodeURI(thePic);
+        var ds_tqq = 'http://v.t.qq.com/share/share.php?title=' + encodeURIComponent(thetitle) + '&url=' + encodeURI(thelink) + '&site=""' + '&pic=' + encodeURI(thePic);
+        var ds_renren = 'http://share.renren.com/share/buttonshare?link=' + encodeURI(thelink) + '&title=' + encodeURIComponent(thetitle);
+        var ds_qzone = 'http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url='+ encodeURIComponent(thelink)+ '&title='+encodeURIComponent(thetitle)+'&pics=' + encodeURI(thePic);
+        var ds_douban = ' http://www.douban.com/recommend/?url='+encodeURIComponent(thelink)+ '&title='+encodeURIComponent(thetitle);
+        var param = ['toolbar=0,status=0,resizable=1,width=' + width + ',height=' + height + ',left=',(screen.width-width)/2,',top=',(screen.height-height)/2].join('');
+        var windowName = '分享到';
+        var httpUrl = '';
+        if(snsName == 'sina'){
+            httpUrl = ds_tsina;
+        }else if(snsName == 'qq'){
+            httpUrl = ds_tqq;
+        }else if(snsName == 'renren'){
+            httpUrl = ds_renren;
+        }else if(snsName == 'qzone'){
+            httpUrl = ds_qzone;
+        }else if(snsName == 'douban'){
+            httpUrl = ds_douban;
+        }
+
+        window.open(httpUrl, windowName, param);
+    }
+</script>
+<div class="container" id="container">
+
+    <!--切换区域-->
+    <!--首页-->
+    <div now="true" style="display:block" class="change-content">
+        <div class="container-girlImg ">
+            <img  src="img/container-girlImgSmall.jpg" imgBigS="img/container-girlImgBig.jpg"  alt="girl" title=""/>
+            <div class="box-shadow"></div>
+        </div>
+        <div class="container-ycImg ">
+            <img  src="img/container-ycImgSmall.png" imgBigS="img/container-ycImgBig.png"  alt="赢创" title=""/>
+        </div>
+    </div>
+    <!--导航1-->
+    <div now="false" style="display:none" class="change-content">
+        <div class="cartoonBox">
+            <!--卡通图片放这里-->
+            <img src="img/cartoonImg-first-small.jpg" cartoonImgBigS="img/cartoonImg-first-big.jpg" class="cartoon-img" now="true" style="display:block" alt="cartoon"/>
+            <img src="img/cartoonImg-second-small.jpg" cartoonImgBigS="img/cartoonImg-second-big.jpg" class="cartoon-img" now="false" style="display:none" alt="cartoon"/>
+            <img src="img/cartoonImg-fourth-small.jpg" cartoonImgBigS="img/cartoonImg-fourth-big.jpg" class="cartoon-img" now="false" style="display:none" alt="cartoon"/>
+            <img src="img/cartoonImg-first-small.jpg" cartoonImgBigS="img/cartoonImg-first-big.jpg" class="cartoon-img" now="true" style="display:block" alt="cartoon"/>
+            <div class="scroll-bar-box">
+                <div class="background-line"></div>
+                <div class="scroll-bar"></div>
+            </div>
+        </div>
+    </div>
+    <!--导航2-->
+    <div now="false" style="display:none" class="change-content">
+        <div class="container-ycImg ">
+            <img  src="img/container-ycImgSmall-navS2.png" imgBigS="img/container-ycImgBig-navS2.png"  alt="赢创" title=""/>
+        </div>
+        <div class="container-girlImg ">
+            <img  src="img/container-child-navS2.jpg" imgBigS="img/container-child-big-navS2.jpg"  alt="girl" title=""/>
+            <div class="box-shadow"></div>
+        </div>
+    </div>
+    <!--导航3-->
+    <div now="false" style="display:none" class="change-content">
+        <div class="container-ycImg ">
+            <img  src="img/container-ycImgSmall-navS3.png" imgBigS="img/container-ycImgBig-navS3.png"  alt="赢创" title=""/>
+        </div>
+        <div class="container-girlImg ">
+            <img  src="img/container-child-navS3.jpg" imgBigS="img/container-child-big-navS3.jpg"  alt="girl" title=""/>
+            <div class="box-shadow"></div>
+        </div>
+    </div>
+    <!--导航4-->
+    <div now="false" style="display:none" class="change-content">
+        <div class="container-ycImg ">
+            <img  src="img/container-ycImgSmall-navS4.png" imgBigS="img/container-ycImgBig-navS4.png"  alt="赢创" title=""/>
+        </div>
+        <div class="container-girlImg ">
+            <img  src="img/container-child-navS4.jpg" imgBigS="img/container-child-big-navS4.jpg"  alt="girl" title=""/>
+            <div class="box-shadow"></div>
+        </div>
+    </div>
+    <!--导航5-->
+    <div now="false" style="display:none" class="change-content">
+        <div class="container-ycImg ">
+            <img src="img/ycImg-N5-small.png" imgbigs="img/ycImg-N5-big.png" alt="赢创" title="" />
+            <!--点击下载的按钮，填写外链-->
+            <!--<a class="downLoad-btn" href="https://pan.baidu.com/s/1pLTyR4R#list/path=%2F" target="_blank"> <span class="btn-line top-line"></span> <span class="btn-line right-line"></span> <span class="btn-line bottom-line"></span> <span class="btn-line left-line"></span> </a>-->
+            <a href="javascript:;" class="N5-checkMore-btn"></a>
+            <a href="javascript:;" class="N5-innovate-link"></a>
+            <a href="javascript:;" class="N5-court-link"></a>
+        </div>
+        <div class="container-girlImg ">
+            <img src="http://p1.ifengimg.com/l/2017/34/cf4660d5952c070/container-child-navS5.jpg" imgbigs="http://p3.ifengimg.com/l/2017/34/cf4660d5952c070/container-child-big-navS5.jpg" alt="girl" title="" />
+            <div class="box-shadow"></div>
+        </div>
+    </div>
+    <!--导航5的弹出层-->
+    <div class="N5-pop-wrap">
+        <div class="N5-content-box">
+            <img class="top-img" src="img/N5-pop-topImg.jpg"/>
+            <h3>赢创：特种化工是核心业务(具体内容以编辑版本为准)</h3>
+            <p>赢创工业集团是一家全球领先的特种化工企业。取得盈利性增长，并不断提升企业价值是赢创的核心战略。赢创80%的销售额都来源于占据市场领先地位的业务，我们还将在未来进一步拓展这些业务。赢创的业务专注于全球发展大趋势，即健康、 营养、资源效率和全球化。</p>
+            <p>取得盈利性增长，并不断提升企业价值是赢创的核心战略。赢创80%的销售额都来源于占据市场领先地位的业务，我们还将在未来进一步拓展这些业务。赢创的业务专注于全球发展大趋势，即健康、 营养、资源效率和全球化。</p>
+            <h3>赢创：特种化工是核心业务(具体内容以编辑版本为准)</h3>
+            <p>取得盈利性增长，并不断提升企业价值是赢创的核心战略。赢创80%的销售额都来源于占据市场领先地位的业务，我们还将在未来进一步拓展这些业务。赢创的业务专注于全球发展大趋势，即健康、 营养、资源效率和全球化。</p>
+            <img src="img/N5-pop-topImg.jpg"/>
+            <h3>赢创：特种化工是核心业务(具体内容以编辑版本为准)</h3>
+            <p>赢创工业集团是一家全球领先的特种化工企业。取得盈利性增长，并不断提升企业价值是赢创的核心战略。赢创80%的销售额都来源于占据市场领先地位的业务，我们还将在未来进一步拓展这些业务。赢创的业务专注于全球发展大趋势，即健康、 营养、资源效率和全球化。</p>
+            <p>取得盈利性增长，并不断提升企业价值是赢创的核心战略。赢创80%的销售额都来源于占据市场领先地位的业务，我们还将在未来进一步拓展这些业务。赢创的业务专注于全球发展大趋势，即健康、 营养、资源效率和全球化。</p>
+            <p>取得盈利性增长，并不断提升企业价值是赢创的核心战略。赢创80%的销售额都来源于占据市场领先地位的业务，我们还将在未来进一步拓展这些业务。赢创的业务专注于全球发展大趋势，即健康、 营养、资源效率和全球化。</p>
+            <p>取得盈利性增长，并不断提升企业价值是赢创的核心战略。赢创80%的销售额都来源于占据市场领先地位的业务，我们还将在未来进一步拓展这些业务。赢创的业务专注于全球发展大趋势，即健康、 营养、资源效率和全球化。</p>
+        </div>
+        <div class="scroll-bar-box">
+            <div class="background-line"></div>
+            <div class="scroll-bar"></div>
+        </div>
+        <a href="javascript:;" class="close-pop-btn"></a>
+    </div>
+
+    <div class="two-dimension-code">
+        <img src="img/two-dimension-code.jpg"/>
+    </div>
+</div>
+<div class="button-box button-prev "><a href="javascript:"></a></div>
+<div class="button-box button-next btn-active"><a href="javascript:"></a></div>
+<div class="footer">
+    <div class="items-content clearFix">
+        <div class="footer-item footer-item0">
+            <p class="text-index">首页</p>
+        </div>
+        <div class="footer-item footer-item1">
+            <div class="footerNum-circle"></div>
+            <img src="img/footerNum-1.png" alt=""/>
+            <p>敬传奇<br/>大鱼漫画</p>
+        </div>
+        <div class="footer-item footer-item2">
+            <div class="footerNum-circle"></div>
+            <img src="img/footerNum-2.png" alt=""/>
+            <p>寻至美<br/>发现化学之美</p>
+        </div>
+        <div class="footer-item footer-item3">
+            <div class="footerNum-circle"></div>
+            <img src="img/footerNum-3.png" alt=""/>
+            <p>求新知<br/>化学大富翁</p>
+        </div>
+        <div class="footer-item footer-item4">
+            <div class="footerNum-circle"></div>
+            <img src="img/footerNum-4.png" alt=""/>
+            <p>探匠心<br/>德国发现之旅</p>
+        </div>
+        <div class="footer-item footer-item5">
+            <div class="footerNum-circle"></div>
+            <img src="img/footerNum-5.png" alt=""/>
+            <p>话趣味<br/>赢创E博士</p>
+        </div>
+    </div>
+    <div class="pop-up">
+            <dl class="pop-item" forbiden="false">
+                <dt>第一期</dt>
+                <dd>战争年代，<br/>化学家们都在忙些啥？</dd>
+            </dl>
+            <dl class="pop-item" forbiden="false">
+                <dt>第二期</dt>
+                <dd>赢创的前世今生<br/>小小铸币场的逆袭神话</dd>
+            </dl>
+            <dl class="pop-item" forbiden="false">
+                <dt>第三期</dt>
+                <dd>大鱼高级定制：<br/>成功鱼士养成秘籍</dd>
+            </dl>
+            <dl class="pop-item" forbiden="false">
+                <dt>第四期</dt>
+                <dd>看我七十二变！<br/>神奇材料的变身秘密</dd>
+            </dl>
+            <dl class="pop-item last" forbiden="true">
+                <dt>第五期</dt>
+                <dd>敬请期待</dd>
+            </dl>
+        <div class="triangle"></div>
+    </div>
+</div>
+<script>
+
+    var $ = jQuery.noConflict();
+    var $changeContents = $('.change-content');
+    var $childImg = $('.container-girlImg img');
+    var $ycImg = $('.container-ycImg img');
+    var $containerYcImg = $('.container-ycImg');
+    var $containerChildImg = $('.container-girlImg');
+    var clientWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+    /*当为大屏的时候的一些变化*/
+    if(clientWidth >= 1400){
+        /*当为大屏的时候，添加类样式来修正内容图片的位置*/
+        $containerYcImg.addClass('container-ycImg-big');
+        $containerChildImg.addClass('container-girlImg-Big');
+        $('.box-shadow').addClass('box-shadow-big');
+
+        $('.N5-pop-wrap').addClass('N5-pop-wrap-big');
+        $('.N5-content-box').addClass('N5-content-box-big');
+        $('.top-img').addClass('top-img-big');
+
+        $('.N5-checkMore-btn').addClass('N5-checkMore-btn-big');
+        $('.N5-innovate-link').addClass('N5-innovate-link-big');
+        $('.N5-court-link').addClass('N5-court-link-big');
+
+        /*当为大屏的时候，将图片替换为大屏图片*/
+        for(var i=0;i<$childImg.length;i++){
+            $childImg.eq(i).attr('src',$childImg.eq(i).attr('imgBigS'))
+            $ycImg.eq(i).attr('src',$ycImg.eq(i).attr('imgBigS'));
+        }
+
+        /*当为大屏的时候，添加类来控制nav1 中cartoonBox的大小*/
+        $('.cartoonBox').addClass('cartoonBox-big');
+
+        /*当为大屏的时候，替换掉cartoon img中的src 使用大图*/
+        for(var i=0;i<$('.cartoon-img').length;i++){
+            $('.cartoon-img').eq(i).attr('src',$('.cartoon-img').eq(i).attr('cartoonImgBigS'));
+        }
+
+        /*当为大屏的时候添加类改变二维码的位置*/
+        $('.two-dimension-code').addClass('two-dimension-code-big');
+
+        /*当为大屏的时候 点击下载按钮中添加类来修改样式*/
+        $('a.downLoad-btn').addClass('downLoad-btn-big');
+    }
+
+
+    /*点击前进后退按钮页面上内容的切换*/
+    $('.button-prev').on('click',function () {
+        if($(this).hasClass('btn-active')) {
+            var $index = $('.change-content').index($('.change-content[now=true]'));
+
+            /*显示对应层，隐藏其他层*/
+            $('.change-content').fadeOut().attr('now', 'false').eq($index - 1).fadeIn().attr('now', 'true');
+
+            /*图层控制footer区底部对应的样式*/
+            $('.footer .footer-item').eq($index-1).children('div.footerNum-circle').css('background','url(http://p0.ifengimg.com/l/2017/34/cf4660d5952c070/footerNum-circle-active.png) no-repeat center center').end().siblings().children('div.footerNum-circle').css('background','url(http://p0.ifengimg.com/l/2017/34/cf4660d5952c070/footerNum-circle.png) no-repeat center center');
+
+            /*当下一个出现的元素的序号小于总序号时就把next-button显示*/
+            if($index-1 < $('.change-content').length-1){
+                $('.button-next').addClass('btn-active');
+            }
+
+            /*当下一个出现的元素的序号为0的时候禁用prev-button*/
+            if ($index - 1 == 0) {
+                $(this).removeClass('btn-active');
+            }
+        }
+    });
+    $('.button-next').on('click',function () {
+        if($(this).hasClass('btn-active')) {
+            /*var $index =$('.change-content[now=true]').index();*/
+            var $index = $('.change-content').index($('.change-content[now=true]'));
+
+            /*显示对应层，隐藏其他层*/
+            $('.change-content').fadeOut().attr('now', 'false').eq($index + 1).fadeIn().attr('now', 'true');
+
+            /*图层控制footer区底部对应的样式*/
+            $('.footer .footer-item').eq($index+1).children('div.footerNum-circle').css('background','url(http://p0.ifengimg.com/l/2017/34/cf4660d5952c070/footerNum-circle-active.png) no-repeat center center').end().siblings().children('div.footerNum-circle').css('background','url(http://p0.ifengimg.com/l/2017/34/cf4660d5952c070/footerNum-circle.png) no-repeat center center');
+
+            /*当下一个元素的序号大于等于1时，让prev-button显示*/
+            if($index+1>=1){
+                $('.button-prev').addClass('btn-active');
+            }
+            /*当下一个元素的序号等于最大序号时，让next-button禁用*/
+            if($index+1 == $('.change-content').length-1){
+                $(this).removeClass('btn-active');
+            }
+        }
+
+
+
+    });
+
+
+    /*移入和移出footer-item1 弹出层的显示隐藏*/
+    var timer = null;
+    $('.footer .footer-item1').on('mouseover',function () {
+        clearTimeout(timer);
+        $('.pop-up').css('display','block');
+    }).on('mouseout',function () {
+        timer = setTimeout(function () {
+            $('.pop-up').css('display','none');
+        },300);
+    });
+    $('.pop-up').on('mouseover',function () {
+        clearTimeout(timer);
+    }).on('mouseout',function () {
+        timer = setTimeout(function () {
+            $('.pop-up').css('display','none');
+        },300);
+    });
+
+    /*导航5区域交互*/
+    //点击查看更多按钮
+    $('.N5-checkMore-btn').on('click',function (ev) {
+        $('.N5-pop-wrap').fadeIn();
+        $('.change-content[now=true]').fadeOut();
+    });
+
+    //点击关闭按钮
+    $('.close-pop-btn').on('click',function (ev) {
+        $('.N5-pop-wrap').fadeOut();
+        $('.change-content[now=true]').fadeIn();
+    });
+
+
+    /*点击底部数字时，页面上内容的切换*/
+    $('.footer-item').on('click',function () {
+        var $index = $('.footer-item').index($(this));
+        /*点击的底部对应的页面如果就是当前页面则不作改变，只有当点击底部页面对应的页面不是当前页时才改变*/
+        if($('.change-content').eq($index).attr('now') == 'false'){
+            /*切换到底部点击序号对应的changeContent页面*/
+            $('.change-content').fadeOut().attr('now','false').eq($index).fadeIn().attr('now','true');
+
+            /*对应底部的样式发生改变，前面的小圆点变成实心，其余为空心*/
+            $('.footer-item').eq($index).children('.footerNum-circle').css('background','url(http://p0.ifengimg.com/l/2017/34/cf4660d5952c070/footerNum-circle-active.png) no-repeat center center').end().siblings().children('.footerNum-circle').css('background','url(http://p0.ifengimg.com/l/2017/34/cf4660d5952c070/footerNum-circle.png) no-repeat center center');
+
+            /*让页面上的前后点击按钮能在第一个时，往前不能点，最后一个是，往后不能点*/
+            if($index == $('.footer-item').length-1){
+                $('.button-next').removeClass('btn-active');
+                $('.button-prev').addClass('btn-active');
+            }else if($index == 0){
+                $('.button-prev').removeClass('btn-active');
+                $('.button-next').addClass('btn-active');
+            }else{
+                $('.button-box').addClass('btn-active');
+            }
+        }
+    });
+
+
+
+    /* 导航1的scroll-bar 区*/
+    var clientHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+    var footerHeight = $('.footer').height();
+    var scrollBarHeight =parseInt($('.scroll-bar').css('height'));
+    var scrollBoxHeight = clientHeight - footerHeight;
+    var denominator = scrollBoxHeight - scrollBarHeight;
+
+    $('.scroll-bar-box').css('height',scrollBoxHeight);
+    var N5PopBoxHeight = $('.N5-content-box').height();
+    /*只有当这一页显示的时候才触发下面的事件*/
+    if($('.change-content[now=true]')){
+
+        /*滚动条滚动的时候触发的事件*/
+        $('.scroll-bar').eq(0).on('mousedown',function (ev) {
+            var event = ev || window.event;
+            var disY = event.clientY - $('.scroll-bar').eq(0).offset().top;
+            var cartoonImgHeight = $('.cartoon-img[now=true]').height();
+
+            $('.cartoon-img[now=true]').css('height',cartoonImgHeight);
+            if($('.scroll-bar')[0].setCapture){
+                $('.scroll-bar')[0].setCapture();
+            }
+            $(document).on('mousemove',function (ev) {
+                var event = ev || window.event;
+                var disT = event.clientY - disY;
+                if(disT <= 0){
+                    disT = 0;
+                }else if(disT >= denominator){
+                    disT = denominator;
+                }
+                $('.scroll-bar').eq(0).css('top',disT+'px');
+
+                /*计算比例尺*/
+                var scale = $('.scroll-bar').eq(0).offset().top/denominator;
+                $('.cartoon-img[now=true]').css('top',-scale*(cartoonImgHeight - scrollBoxHeight ));
+
+            });
+            $(document).on('mouseup',function () {
+                $(document).off('mousemove');
+                $(document).off('mouseup');
+                if($('.scroll-bar')[0].releaseCapture){
+                    $('.scroll-bar')[0].releaseCapture();
+                }
+            });
+            return false;
+        });
+        /*鼠标滚轮事件带动滚动条滚动*/
+        $('.cartoonBox')[0].onmousewheel = mousewheel;//ie/chrome
+        if( $('.cartoonBox')[0].addEventListener){
+            $('.cartoonBox')[0].addEventListener('DOMMouseScroll',mousewheel,false);//ff
+        }
+        var initialW = 0;
+        function mousewheel(ev) {
+            var event = ev || window.event;
+            var cartoonImgHeight = $('.cartoon-img[now=true]').height();
+            $('.cartoon-img[now=true]').css('height',cartoonImgHeight);
+
+            var direction = true;//向上为true
+
+            /*鼠标方向的兼容处理*/
+            if(event.wheelDelta){
+                direction = event.wheelDelta > 0 ? true : false;
+            }else{
+                direction = event.detail < 0 ? true : false;
+            }
+
+            if(direction){
+                /*向上滚动*/
+                goUp(cartoonImgHeight);
+            }else{
+                /*向下滚动*/
+                goDown(cartoonImgHeight);
+            }
+
+        }
+
+        /*键盘上下键控制鼠标滚轮和图片位置*/
+        $(document).on('keydown',function (ev) {
+            var event = ev || event;
+            var cartoonImgHeight = $('.cartoon-img[now=true]').height();
+            $('.cartoon-img[now=true]').css('height',cartoonImgHeight);
+
+            if(event.keyCode == 38){
+                /*按上键*/
+                goUp(cartoonImgHeight);
+            }else if(event.keyCode == 40){
+                /*按下键*/
+                goDown(cartoonImgHeight);
+            }
+            return false;
+        })
+    }
+    if($('.change-content[now=true]')){
+
+        /*滚动条滚动的时候触发的事件*/
+        $('.scroll-bar').eq(1).on('mousedown',function (ev) {
+            var event = ev || window.event;
+            var disY = event.clientY - $('.scroll-bar').eq(1).offset().top;
+
+            N5PopBoxHeight = $('.N5-content-box').height();
+
+            if($('.scroll-bar')[0].setCapture){
+                $('.scroll-bar')[0].setCapture();
+            }
+            $(document).on('mousemove',function (ev) {
+                var event = ev || window.event;
+                var disT = event.clientY - disY;
+                if(disT <= 0){
+                    disT = 0;
+                }else if(disT >= denominator){
+                    disT = denominator;
+                }
+                $('.scroll-bar').eq(1).css('top',disT+'px');
+
+                /*计算比例尺*/
+                var scale = $('.scroll-bar').eq(1).offset().top/denominator;
+                $('.N5-content-box').css('top',-scale*(N5PopBoxHeight - scrollBoxHeight ));
+                console.log(N5PopBoxHeight)
+            });
+            $(document).on('mouseup',function () {
+                $(document).off('mousemove');
+                $(document).off('mouseup');
+                if($('.scroll-bar')[0].releaseCapture){
+                    $('.scroll-bar')[0].releaseCapture();
+                }
+            });
+            return false;
+        });
+        /*鼠标滚轮事件带动滚动条滚动*/
+        /* $('.cartoonBox')[1].onmousewheel = mousewheel;//ie/chrome
+         if( $('.cartoonBox')[1].addEventListener){
+         $('.cartoonBox')[1].addEventListener('DOMMouseScroll',mousewheel,false);//ff
+         }*/
+        $(document)[0].onmousewheel = mousewheel;
+        if($(document)[0].addEventListener){
+            $(document)[0].addEventListener('DOMMouseScroll',mousewheel,false);
+        }
+        var initialW = 0;
+        function mousewheel(ev) {
+            var event = ev || window.event;
+            N5PopBoxHeight = $('.N5-content-box').height();
+            var direction = true;//向上为true
+
+            /*鼠标方向的兼容处理*/
+            if(event.wheelDelta){
+                direction = event.wheelDelta > 0 ? true : false;
+            }else{
+                direction = event.detail < 0 ? true : false;
+            }
+
+            if(direction){
+                /*向上滚动*/
+                if($('.scroll-bar').eq(1).offset().top >= 2){
+                    /*滚动条移动*/
+                    $('.scroll-bar').eq(1).css('top', ($('.scroll-bar').eq(1).offset().top - 12) + 'px' )
+                    /*计算比例尺*/
+                    var scale = $('.scroll-bar').eq(1).offset().top/denominator;
+
+                    $('.N5-content-box').css('top',(-scale*(N5PopBoxHeight - scrollBoxHeight ))+'px');
+                }
+            }else{
+                /*向下滚动*/
+                if($('.scroll-bar').eq(1).offset().top <= denominator-2){
+
+                    /*滚动条移动*/
+                    $('.scroll-bar').eq(1).css('top', ($('.scroll-bar').eq(1).offset().top + 12) + 'px' )
+                    /*计算比例尺*/
+                    var scale = $('.scroll-bar').eq(1).offset().top/denominator;
+
+                    $('.N5-content-box').css('top',(-scale*(N5PopBoxHeight - scrollBoxHeight ))+'px');
+                }
+            }
+
+        }
+
+        /*键盘上下键控制鼠标滚轮和图片位置*/
+        $(document).on('keydown',function (ev) {
+            var event = ev || event;
+            N5PopBoxHeight = $('.N5-content-box').height();
+            if(event.keyCode == 38){
+                /*按上键*/
+                if($('.scroll-bar').eq(1).offset().top >= 2){
+                    /*滚动条移动*/
+                    $('.scroll-bar').eq(1).css('top', ($('.scroll-bar').eq(1).offset().top - 12) + 'px' )
+                    /*计算比例尺*/
+                    var scale = $('.scroll-bar').eq(1).offset().top/denominator;
+
+                    $('.N5-content-box').css('top',(-scale*(N5PopBoxHeight - scrollBoxHeight ))+'px');
+                }
+            }else if(event.keyCode == 40){
+                /*按下键*/
+                if($('.scroll-bar').eq(1).offset().top <= denominator-2){
+
+                    /*滚动条移动*/
+                    $('.scroll-bar').eq(1).css('top', ($('.scroll-bar').eq(1).offset().top + 12) + 'px' )
+                    /*计算比例尺*/
+                    var scale = $('.scroll-bar').eq(1).offset().top/denominator;
+
+                    $('.N5-content-box').css('top',(-scale*(N5PopBoxHeight - scrollBoxHeight ))+'px');
+                }
+            }
+            return false;
+        })
+    }
+
+
+    /*公共部分*/
+    /*向上移动*/
+    function goUp(cartoonImgHeight) {
+        if($('.scroll-bar').eq(0).offset().top >= 2){
+            /*滚动条移动*/
+            $('.scroll-bar').eq(0).css('top', ($('.scroll-bar').eq(0).offset().top - 2) + 'px' )
+            /*计算比例尺*/
+            var scale = $('.scroll-bar').eq(0).offset().top/denominator;
+
+            /*img跟随scrollbar移动位置*/
+            $('.cartoon-img[now=true]').css('top',-scale*(cartoonImgHeight - scrollBoxHeight ));
+        }
+    }
+
+    /*向下移动*/
+    function goDown(cartoonImgHeight) {
+        if($('.scroll-bar').eq(0).offset().top <= denominator-2){
+
+            /*滚动条移动*/
+            $('.scroll-bar').eq(0).css('top', ($('.scroll-bar').eq(0).offset().top + 2) + 'px' )
+            /*计算比例尺*/
+            var scale = $('.scroll-bar').eq(0).offset().top/denominator;
+
+            /*img跟随scrollbar移动位置*/
+            $('.cartoon-img[now=true]').css('top',-scale*(cartoonImgHeight - scrollBoxHeight ));
+        }
+    }
+
+    /*当点击footer中的pop-item时，切换nav中的cartoon图片*/
+    $('.pop-item[forbiden=false]').on('click',function () {
+        var $index = $('.pop-item[forbiden=false]').index($(this));
+
+        /*如果当前的change-content就是cartoon页，则不需要fadeout 和 fadeIn 只需要改变图片即可*/
+        if($('.change-content').eq(1).attr('now') == 'false'){
+            $('.change-content').fadeOut().attr('now','false').eq(1).fadeIn().attr('now','true');
+
+            /*设置对应底部的数字前面圆点的样式*/
+            $('.footer-item').eq(1).children('.footerNum-circle').css('background','url(http://p0.ifengimg.com/l/2017/34/cf4660d5952c070/footerNum-circle-active.png) no-repeat center center').end().siblings().children('.footerNum-circle').css('background','url(http://p0.ifengimg.com/l/2017/34/cf4660d5952c070/footerNum-circle.png) no-repeat center center');
+
+            /*两边的按钮都可点击*/
+            $('.button-box').addClass('btn-active');
+        }
+
+        /*改变动画的对应的图片*/
+        $('.cartoon-img').css('display','none').attr('now','false').eq($index).css('display','block').attr('now','true');
+        /*每次变换时，把scrollbar 放到顶部*/
+        $('.scroll-bar').css('top',0);
+    });</script>
+</body>
+</html>
